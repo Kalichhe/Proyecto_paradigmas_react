@@ -1,0 +1,86 @@
+
+form img {
+    padding-top: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-bottom: 0%;
+    width: 100%;
+    height: 400px;
+    display:block;
+}
+
+form div {
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 1%;
+}
+
+/* Admin */
+form nav a {
+    display: flex;
+    position: absolute;
+    margin-top: 5px;
+    right: calc(1%);
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Title Login */
+h1.h3.mb-3.fw-normal {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Email */
+form div label[for = "floatingInput"] {
+    margin-left: 20%;
+    width: 60%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input[type = email] {
+    border-color: #FCDA00;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+/* Password */
+form div label[for = "floatingPassword"] {
+    margin-left: 20%;
+    width: 60%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input[type = password] {
+    border-color: #FCDA00;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+/* Text */
+form div label p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Register */
+form div label p a {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Send */
+input.w-50.btn.btn-lg.btn-primary {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: blue;
+}
