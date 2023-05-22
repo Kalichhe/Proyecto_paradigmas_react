@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 
 const Inicio = () =>{
     return (
-        <h1> Bienvenido a rappi</h1>
+        <h1> Welcome </h1>
     )
 }
 
