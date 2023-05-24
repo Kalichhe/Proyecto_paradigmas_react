@@ -1,14 +1,17 @@
+
+// Nota: A este archivo JS no le aplique Css por el tema de tengo el mismo nombre para los campos, asi que el tomo las modificaciones de esos campos
+
 import { useState } from "react";
-import "../Styles/Login.css";
+
 
 function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  async function loginUser(event) {
+  async function loginAdmin(event) {
     event.preventDefault();
 
-    const response = await fetch("http://localhost:1337/api/login", {
+    const response = await fetch("http://localhost:1337/api/login-admin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,35 +25,32 @@ function App() {
 
     console.log(data);
 
-    if (data.user) {
+    if (data.admin) {
       alert("Login successful");
-      window.location.href = "/inicio";
+      window.location.href = "/consultation";
     } else {
       alert("Please check your user name and password");
     }
   }
+
   return (
     <div
       className="text-center"
       style={{
-        paddingTop: "0%",
-        paddingLeft: "0%",
-        paddingRight: "0%",
+        paddingTop: "0",
+        paddingLeft: "0",
+        paddingRight: "0",
         paddingBottom: "15%",
       }}
     >
-      <form onSubmit={loginUser}>
-        <nav>
-          <a href="login-admin">Admin</a>
-        </nav>
-
+      <form onSubmit={loginAdmin}>
         <img
           className="mb-4"
           src={require("../images/logo_offcorss.png")}
           alt="Logo"
         />
 
-        <h1 className="h3 mb-3 fw-normal">Login</h1>
+        <h1 className="h3 mb-3 fw-normal">Login Admin</h1>
 
         <div className="form-floating">
           <input
@@ -62,7 +62,7 @@ function App() {
             onChange={(e) => setEmail(e.target.value)}
           />
 
-          <label htmlFor="floatingInput">Email address</label>
+          <label htmlFor="floatingInput">Email</label>
         </div>
         <div className="form-floating">
           <input
@@ -73,6 +73,7 @@ function App() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+
           <label htmlFor="floatingPassword">Password</label>
         </div>
         <input
@@ -80,16 +81,6 @@ function App() {
           type="submit"
           value="Log In"
         />
-
-        <div className="checkbox mb-3">
-          <label>
-            <p>
-              {" "}
-              You do not have an account? <a href="/register"> Sign up here </a>
-            </p>
-          </label>
-        </div>
-        <p className="mt-5 mb-3 text-muted">© 2023–2023</p>
       </form>
     </div>
   );

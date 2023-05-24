@@ -7,6 +7,7 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 const User = require("./models/user.model");
+const Admin = require("./models/admin.model");
 const jwt = require("jsonwebtoken");
 
 app.use(cors());
@@ -60,6 +61,45 @@ app.post("/api/login", async (req, res) => {
     return res.json({ status: "error", user: false });
   }
 });
+
+app.post("/api/login-admin", async (req, res) => {
+  const admin = await Admin.findOne({
+    email: req.body.email,
+    password: req.body.password,
+  });
+  if (admin) {
+    const token = jwt.sign(
+      {
+        name: admin.name,
+        email: admin.email,
+      },
+      "seecret123"
+    );
+    return res.json({ status: "ok", admin: token });
+  } else {
+    return res.json({ status: "error", admin: false });
+  }
+});
+
+app.post("/api/consultation", async (req, res) => {
+  const identification_document = req.body.identification_document;
+
+  const user = await User.findOne({
+    identification_document
+  });
+
+  if (user) {
+    return res.json({
+      status: "ok",
+      nombre: user.name,
+      documento: user.identification_document,
+    });
+  } else {
+    return res.json({ status: "error", message: "User not found" });
+  }
+});
+
+
 
 app.listen(1337, () => {
   console.log("The server just started");

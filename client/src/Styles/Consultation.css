@@ -1,0 +1,16 @@
+
+form div label[for = "floatingPassword"] {
+    margin-left: 20%;
+    width: 60%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input[type = identification] {
+    border-color: #FCDA00;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 20px;
+}

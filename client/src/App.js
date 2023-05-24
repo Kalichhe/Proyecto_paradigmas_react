@@ -4,6 +4,9 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Inicio from './pages/Inicio'
 import TermsOfUse from './pages/TermsOfUse'
+import Admin from './pages/Admin'
+import Consultation from './pages/Consultation'
+import Result from './pages/Result'
 
 
 const App = () => {
@@ -15,6 +18,9 @@ const App = () => {
 				<Route path="/register"  element={<Register/>} />
                 <Route path="/inicio"  element={<Inicio/>} />
 				<Route path="/TermsOfUse" element= {<TermsOfUse/>}/>
+				<Route path="/login-admin" element= {<Admin/>}/>
+				<Route path="/consultation" element= {<Consultation/>}/>
+				<Route path="/result" element= {<Result/>}/>
 				</Routes>
 			</BrowserRouter>
 		</div>
