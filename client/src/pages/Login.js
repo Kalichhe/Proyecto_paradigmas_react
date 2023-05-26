@@ -89,7 +89,7 @@ function App() {
             </p>
           </label>
         </div>
-        <p className="mt-5 mb-3 text-muted">© 2023–2023</p>
+        <p className="mt-5 mb-3 text-muted" id="text">© 2023–2023</p>
       </form>
     </div>
   );

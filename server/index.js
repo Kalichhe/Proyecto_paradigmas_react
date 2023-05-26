@@ -85,7 +85,7 @@ app.post("/api/consultation", async (req, res) => {
   const identification_document = req.body.identification_document;
 
   const user = await User.findOne({
-    identification_document
+    identification_document,
   });
 
   if (user) {
@@ -98,8 +98,6 @@ app.post("/api/consultation", async (req, res) => {
     return res.json({ status: "error", message: "User not found" });
   }
 });
-
-
 
 app.listen(1337, () => {
   console.log("The server just started");
