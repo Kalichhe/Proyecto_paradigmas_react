@@ -20,7 +20,7 @@ function App() {
 
     console.log(data);
 
-    if (data.identification_document) {
+    if (data.documento) {
       alert("User found");
       window.location.href = "/result";
     } else {

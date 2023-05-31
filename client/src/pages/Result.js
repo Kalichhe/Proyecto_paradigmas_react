@@ -10,8 +10,7 @@ function App() {
         paddingRight: "0",
         paddingBottom: "15%",
       }}
-    >
-      
+    >  
       <form>
         <img
           className="mb-4"
@@ -19,7 +18,7 @@ function App() {
           alt="Logo"
         />
 
-        <h1 className="h3 mb-3 fw-normal">Result</h1>
+        <h1 className="h3 mb-3 fw-normal">General Information</h1>
       </form>
     </div>
   );
